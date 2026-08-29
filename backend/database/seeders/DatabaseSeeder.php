@@ -13,12 +13,19 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        // Skip seeding if data already exists (safe to run on every deploy)
+        if (Product::count() > 0) {
+            return;
+        }
+
         // Create admin user
-        User::create([
-            'name' => 'Admin User',
-            'email' => 'admin@slekco.com',
-            'password' => bcrypt('password'),
-        ]);
+        User::firstOrCreate(
+            ['email' => 'admin@slekco.com'],
+            [
+                'name' => 'Admin User',
+                'password' => bcrypt('password'),
+            ]
+        );
 
         // Create brands
         $brands = [
@@ -84,10 +91,10 @@ class DatabaseSeeder extends Seeder
                 'category_id' => 1,
                 'brand_id' => 1,
                 'images' => json_encode([
-                    'https://images.unsplash.com/photo-1546868871-af0de0ae72be?w=600',
+                    'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600',
                     'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600',
                 ]),
-                'thumbnail' => 'https://images.unsplash.com/photo-1546868871-af0de0ae72be?w=400',
+                'thumbnail' => 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400',
                 'is_featured' => true,
                 'rating' => 4.6,
                 'reviews_count' => 189,
@@ -207,10 +214,10 @@ class DatabaseSeeder extends Seeder
                 'category_id' => 3,
                 'brand_id' => 3,
                 'images' => json_encode([
-                    'https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600',
+                    'https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=600',
                     'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=600',
                 ]),
-                'thumbnail' => 'https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=400',
+                'thumbnail' => 'https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=400',
                 'is_featured' => false,
                 'rating' => 4.6,
                 'reviews_count' => 67,
@@ -246,9 +253,9 @@ class DatabaseSeeder extends Seeder
                 'category_id' => 3,
                 'brand_id' => 3,
                 'images' => json_encode([
-                    'https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?w=600',
+                    'https://images.unsplash.com/photo-1600369672770-985fd30004eb?w=600',
                 ]),
-                'thumbnail' => 'https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?w=400',
+                'thumbnail' => 'https://images.unsplash.com/photo-1600369672770-985fd30004eb?w=400',
                 'is_featured' => true,
                 'rating' => 4.7,
                 'reviews_count' => 123,

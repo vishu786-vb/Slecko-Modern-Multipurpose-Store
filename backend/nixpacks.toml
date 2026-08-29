@@ -1,0 +1,19 @@
+# Nixpacks configuration for deploying Laravel on Railway
+
+[phases.setup]
+nixPkgs = ["php82", "php82Packages.composer", "nginx"]
+
+[phases.install]
+cmds = [
+  "composer install --no-dev --optimize-autoloader --no-interaction"
+]
+
+[phases.build]
+cmds = [
+  "php artisan config:clear",
+  "php artisan route:clear",
+  "php artisan view:clear"
+]
+
+[start]
+cmd = "sh ./railway-start.sh"
