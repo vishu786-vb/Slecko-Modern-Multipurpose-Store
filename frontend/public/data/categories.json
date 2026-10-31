@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Electronics", "slug": "electronics", "description": "Latest gadgets and tech", "image": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400", "products_count": 4 },
+  { "id": 2, "name": "Fashion", "slug": "fashion", "description": "Trendy clothing and accessories", "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?w=400", "products_count": 3 },
+  { "id": 3, "name": "Home & Living", "slug": "home-living", "description": "Furniture and decor", "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400", "products_count": 3 },
+  { "id": 4, "name": "Sports & Fitness", "slug": "sports-fitness", "description": "Workout gear and equipment", "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400", "products_count": 3 },
+  { "id": 5, "name": "Accessories", "slug": "accessories", "description": "Watches, bags, and more", "image": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400", "products_count": 3 },
+  { "id": 6, "name": "Beauty & Care", "slug": "beauty-care", "description": "Skincare and wellness", "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400", "products_count": 2 }
+]
