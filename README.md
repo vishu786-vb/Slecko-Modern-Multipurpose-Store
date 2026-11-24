@@ -1,6 +1,7 @@
 # Slekco - Modern Multipurpose E-Commerce Platform
 
 A full-stack e-commerce application with a React frontend and Laravel API backend, built for the Slekco multipurpose brand.
+Demo: https://slecko-modern-mutltipurpose-store.netlify.app/
 
 ## Tech Stack
 
